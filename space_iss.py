@@ -1,6 +1,6 @@
 ###############################################################
 #This is just a starter code for the assignment 1, 
-# you need to follow the assignment brief to complete all the tasks required by the assessemnt brief
+# you need to follow the assignment brief to complete all the tasks required by the assessment brief
 #
 #  This program:
 # - Asks the user to enter an access token or use the hard coded access token.
@@ -26,7 +26,9 @@
 # 12. Complete the code to format the response message.
 # 13. Complete the code to post the message to the Webex room.
 ###############################################################
-from PyQt5.QtLocation import QGeoCodingManager
+from time_utils import epoch_to_readable
+
+
 
 webex_base_url = "https://webexapis.com/v1"
 iss_base_url = "http://api.open-notify.org"
@@ -47,7 +49,7 @@ choice = input("Do you wish to use the hard-coded Webex token? (y/n) ")
 if choice.lower() == "n":
     accessToken = input("Please enter your Webex access token: ")
 else:
-    accessToken = "Bearer OWVmYzhkYjktYjc4NC00MjFhLTlmZmUtMjVlOGZlNWYwZDVhYjY1ZGVmYzctYjUz_P0A1_bdd2aed2-da17-481d-bd6f-b43037ee90b7"
+    accessToken = "Bearer NA"
 
 # 3. Provide the URL to the Webex room API.
 endpoint_url = webex_base_url + "/rooms"
@@ -157,13 +159,13 @@ while True:
         timestamp = json_data["timestamp"]
 
 # 8. Convert the timestamp epoch value to a human readable date and time.
-# Use the time.ctime function to convert the timestamp to a human readable date and time.
-        timeString = time.ctime(timestamp)
+# Calling the epoch_to_readable function to convert the timestamp to a human readable date and time.
+        timeString = epoch_to_readable(timestamp)
 
 # 9. Provide your Geoloaction API consumer key.
 # https://eu1.locationiq.com/v1/reverse?key=pk.6b11667ec7f2f2dd378b1cec9b4d152e&lat=51.50344025&lon=-0.12770820958562096&format=json
         mapsAPIGetParameters = {
-            "key": "pk.6b11667ec7f2f2dd378b1cec9b4d152e",
+            "key": "NA",
             "lat": lat,
             "lon": lng,
             "format": "json",

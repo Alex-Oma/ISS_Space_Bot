@@ -49,7 +49,6 @@ This investigation sheet helps you gather key technical information from the thr
 ```
 
 ```
-|
 
 ---
 
@@ -66,31 +65,42 @@ This investigation sheet helps you gather key technical information from the thr
 
 ## 🧩 Section 5: Web Architecture & MVC Design Pattern (12 marks)
 
-The Model-View-Controller (MVC) design pattern is a widely used architectural approach in 
-software development, particularly for building web applications. It divides an application into 
-three interconnected components: Model, View, and Controller, ensuring a clear separation of concerns. 
-This modular structure enhances maintainability, scalability, and collaboration among developers.
+Web Architecture is the conceptual structure and organization of a web application, defining how different components interact and communicate with each other.
+In a basic way, it is the blueprint for how a web application is built and how it functions.
+It's mai components are:
+
+- Client: The frontend or user interface, typically a web browser or mobile app, that users interact with.
+- Server: A powerful machine or system that processes client requests, performs business logic, and returns
+- Database: A storage system that holds data for the application, such as user information, content, and settings.
+- 
+MVS stands for Model-View-Controller.
+It is a software design pattern commonly used for developing user interfaces that divides an application into three interconnected components.
+This separation helps manage complex applications by promoting organized code, reusability, and maintainability.
+
 
 ### 🌐 Web Architecture – Client-Server Model
 
 - **Client**: The frontend or user interface, typically a web browser or mobile app, sends requests to the server.
 - **Server**: A powerful machine or system that processes client requests, performs business logic, and returns responses.
 - (Explain the communication between them & include a block diagram )
-The Client-Server Model is a fundamental concept in web architecture, enabling communication between clients (users or devices) and servers. 
-This model is essential for the operation of web applications, as it allows for the efficient handling of data and services.
-Request-Response Cycle: The process involves the client sending a request, the server processing it, and the client receiving a response.
-Layered Architecture: The client-server model operates primarily in the application and network layers, with the client initiating communication and the server handling the request and response.
-Here's a block diagram illustrating the Client-Server Model:
+- 
+The Client-Server Model is a distributed application structure that partitions tasks or workloads between service providers, called servers, and service requesters, called clients.
+- Clients initiate communication sessions with servers, which await incoming requests.
+- Servers are typically powerful machines or systems that manage resources and provide services to multiple clients.
+- Clients are usually devices like computers, smartphones, or tablets that users interact with to access services
+- provided by servers.
+- 
 
 
 ### 🔁 RESTful API Usage
  
-A RESTful API (Representational State Transfer) is a widely used architectural style for designing networked applications. It allows communication between a client and a server using 
-standard HTTP methods.  
-Resources: Everything in a RESTful API is treated as a resource, identified by a unique URL also called endpoints (e.g., /users, /products/123).
-HTTP Methods: Common methods include GET (retrieve data), POST (create data), PUT (update data), DELETE (remove data).
-Each request from the client to the server must contain all the information needed to process it. The server does not store client state.
-JSON/XML: Data is typically exchanged in lightweight formats like JSON or XML.
+A RESTful API (Representational State Transfer) is a set of rules and conventions for building and interacting with web services.
+It allows different software applications to communicate with each other over the internet using standard HTTP methods.
+- RESTful APIs are designed to be stateless, meaning each request from a client to a server must contain all the information needed to understand and process the request.
+- They use standard HTTP methods such as GET, POST, PUT, DELETE, etc., to perform operations on resources.
+- Resources are typically represented in formats like JSON or XML.
+- RESTful APIs are widely used for web services because they are simple, scalable, and easy to understand.
+- They enable developers to create applications that can interact with other applications and services seamlessly.
 
 
 ### 🧠 MVC Pattern in Space Bot
@@ -103,15 +113,11 @@ JSON/XML: Data is typically exchanged in lightweight formats like JSON or XML.
 
 
 #### Example:
-- Model: The Model component in the MVC (Model-View-Controller) design pattern demonstrates the data and business logic of an application. 
-- It is responsible for managing the application's data, processing business rules, and responding to requests for information from other 
-- components, such as the View and the Controller.
+- Model: An example of Model here could be a class that handles the logic for fetching the current location of the ISS from the ISS Current Location API, processing the response, and converting the epoch time to a human-readable format.
 - 
-- View: Displays the data from the Model to the user and sends user inputs to the Controller. It is passive and does not directly interact with the Model. 
-- Instead, it receives data from the Model and sends user inputs to the Controller for processing.
+- View: An example of View here could be a function that displays the current location of the ISS and the human-readable time to the user in a formatted message.
 - 
-- Controller: Controller acts as an intermediary between the Model and the View. It handles user input and updates the Model accordingly and updates the View to reflect changes in the Model. 
-- It contains application logic, such as input validation and data transformation.
+- Controller: An example of Controller here could be a function that takes user input (e.g., a command to fetch the ISS location), calls the appropriate Model function to get the data, and then calls the View function to display the result to the user.
 
 ---
 

@@ -1,6 +1,15 @@
-
-
 def get_list_of_webex_rooms(webex_base_url, webex_access_token):
+    '''
+    This function retrieves the list of Webex rooms using the Webex Rooms API.
+    It returns a list of rooms with their details.
+    Parameters:
+        webex_base_url (str): The base URL of the Webex API.
+        webex_access_token (str): The access token for authenticating with the Webex API.
+    Returns:
+        list: A list of Webex rooms with their details.
+    '''
+
+
     import requests
 
     # 3. Provide the URL to the Webex room API.
@@ -22,6 +31,15 @@ def get_list_of_webex_rooms(webex_base_url, webex_access_token):
         return rooms
 
 def search_for_webex_room_to_monitor(rooms):
+    '''
+    This function searches for a Webex room to monitor based on user input.
+    It prompts the user to enter a room name and searches for it in the provided list of rooms.
+    If found, it returns the room ID and title; otherwise, it prompts the user to try again.
+    Parameters:
+        rooms (list): A list of Webex rooms with their details.
+    Returns:
+        tuple: A tuple containing the room ID and title of the found room.
+    '''
     #######################################################################################
     # SEARCH FOR WEBEX ROOM TO MONITOR
     #  - Searches for user-supplied room name.
@@ -52,6 +70,13 @@ def search_for_webex_room_to_monitor(rooms):
 
 
 def print_webex_rooms(rooms):
+    '''
+    This function prints the type and title of each Webex room in the provided list.
+    Parameters:
+        rooms (list): A list of Webex rooms with their details.
+    Returns:
+        None
+    '''
     # 4. Create a loop to print the type and title of each room.
     print("\nList of available rooms:")
     for room in rooms:
@@ -59,6 +84,15 @@ def print_webex_rooms(rooms):
 
 
 def get_last_message_from_room(webex_base_url, webex_access_token, roomIdToGetMessages):
+    '''
+    This function retrieves the last message from a specified Webex room using the Webex Messages API.
+    Parameters:
+        webex_base_url (str): The base URL of the Webex API.
+        webex_access_token (str): The access token for authenticating with the Webex API.
+        roomIdToGetMessages (str): The ID of the Webex room from which to retrieve the last message.
+    Returns:
+        str: The text of the last message in the specified Webex room.
+    '''
     import requests
     # 5. Provide the URL to the Webex messages API.
     endpoint_url = webex_base_url + "/messages"
@@ -88,6 +122,16 @@ def get_last_message_from_room(webex_base_url, webex_access_token, roomIdToGetMe
 
 
 def send_message_to_webex_room(webex_base_url, webex_access_token, roomId, messageText):
+    '''
+    This function sends a message to a specified Webex room using the Webex Messages API.
+    Parameters:
+        webex_base_url (str): The base URL of the Webex API.
+        webex_access_token (str): The access token for authenticating with the Webex API.
+        roomId (str): The ID of the Webex room to which the message will be sent.
+        messageText (str): The text of the message to be sent to the Webex room.
+    Returns:
+        None
+    '''
     import requests
     # Provide the URL to the Webex messages API.
     endpoint_url = webex_base_url + "/messages"

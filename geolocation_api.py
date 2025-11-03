@@ -1,6 +1,18 @@
 
 
 def get_location_from_coordinates(geolocation_base_url, api_key, latitude, longitude, timeString):
+    '''
+    This function reverses the geographical location (country, state, city, street)
+    from the provided latitude and longitude coordinates using the Geolocation API reverse geocode service.
+
+    Parameters:
+        geolocation_base_url (str): The base URL of the Geolocation API.
+        api_key (str): The API key for accessing the Geolocation API.
+        latitude (float): The latitude coordinate.
+        longitude (float): The longitude coordinate.
+        timeString (str): The human-readable date and time string.
+    '''
+
     import requests
     from iso3166 import countries
 
@@ -45,10 +57,10 @@ def get_location_from_coordinates(geolocation_base_url, api_key, latitude, longi
     # responseMessage = "On {}, the ISS was flying over the following location: \n{} \n{}, {} \n{}\n({}\", {}\")".format(timeString, StreetResult, CityResult, StateResult, CountryResult, lat, lng)
 
     if CountryResult == "XZ":
-        responseMessage = "On {}, the ISS was flying over a body of water at latitude {}° and longitude {}°.".format(
+        responseMessage = "On {}, the ISS was flying over a body of water at latitude {}° and longitude {}°. ".format(
             timeString, latitude, longitude)
     else:
-        responseMessage = "On {}, the ISS was flying over the following location: \n{} \n{}, {} \n{}\n({}\", {}\")".format(
+        responseMessage = "On {}, the ISS was flying over the following location: \n{} \n{}, {} \n{}\n({}\", {}\"). ".format(
             timeString, StreetResult, CityResult, StateResult, CountryResult, latitude, longitude)
 
     return responseMessage

@@ -1,8 +1,13 @@
-
-
-
 def get_iss_location(iss_base_url):
+
+    '''
+    This fucntion retrieves the current location of the International Space Station (ISS)
+    using the ISS Current Location API.
+    It returns the latitude, longitude, and timestamp of the ISS position.
+    '''
+
     import requests
+
 
     # 6. Provide the URL to the ISS Current Location API.
     r = requests.get(iss_base_url + "/iss-now.json")
